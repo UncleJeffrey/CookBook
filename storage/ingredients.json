@@ -1,17 +1,19 @@
 {
-    "148235":
-    {
-        "id": "148235",
-        "name": "Unicorn balls",
-        "g": 200,
-        "approved": true
-    },
-    "148987":
-    {
-        "id": "148987",
-        "name":"Unicorn blood",
-        "l": 200,
-        "calories": "200 gcal",
-        "approved": true
-    }
+  "148235": {
+    "id": "148235",
+    "name": "Unicorn balls",
+    "approved": true
+  },
+  "148987": {
+    "id": "148987",
+    "name": "Unicorn blood",
+    "l": 200,
+    "calories": "200 gcal",
+    "approved": true
+  },
+  "546456": {
+    "id": "546456",
+    "name": "Býčí koule",
+    "approved": true
+  }
 }

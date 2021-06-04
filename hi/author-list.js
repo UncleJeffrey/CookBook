@@ -10,7 +10,7 @@ import Calls from "calls";
 
 const STATICS = {
     //@@viewOn:statics
-    displayName: "AuthorList",
+    displayName: "IngredientList",
     //@@viewOff:statics
 };
 
@@ -18,7 +18,7 @@ const CLASS_NAMES = {
     welcomeRow: () => Config.Css.css``,
 };
 
-export const AuthorList = createVisualComponent({
+export const IngredientList = createVisualComponent({
     ...STATICS,
 
     //@@viewOn:propTypes
@@ -185,4 +185,4 @@ export const AuthorList = createVisualComponent({
     },
     });
 
-    export default AuthorList;
+    export default IngredientList;

@@ -5,9 +5,9 @@ import "uu5g04-bricks";
 import {createVisualComponent} from "uu5g04-hooks";
 
 import Book from "book";
-import Author from "author";
+// import Author from "author";
 import BookList from "bookList";
-import AuthorList from "authorList";
+//import AuthorList from "authorList";
 
 import Ingredient from "ingredient";
 import IngredientList from "ingredientList";
@@ -53,16 +53,16 @@ export const LibrarySpa = createVisualComponent({
             UU5.Environment.getRouter().setRoute("bookList")
         }
 
-        function goToAuthorList() {
-            UU5.Environment.getRouter().setRoute("authorList")
-        }
+        // function goToAuthorList() {
+        //     UU5.Environment.getRouter().setRoute("authorList")
+        // }
 
         function goToIngredientList() {
             UU5.Environment.getRouter().setRoute("ingredientList")
         }
 
         function goToRecipeList() {
-            UU5.Environment.getRouter().setRoute("authorList")
+            UU5.Environment.getRouter().setRoute("ingredientList")
         }
 
 
@@ -114,7 +114,7 @@ export const LibrarySpa = createVisualComponent({
                                 </UU5.Bricks.Button>
 
                             </div>
-                            <div>
+                            {/* <div>
                                 <UU5.Bricks.Button
                                     bgStyle={"transparent"}
                                     onClick={goToAuthorList}
@@ -122,7 +122,7 @@ export const LibrarySpa = createVisualComponent({
                                     <UU5.Bricks.Icon icon="mdi-library"/>
                                     <UU5.Bricks.Lsi lsi={{en: "Authors", cs: "Autoři"}}/>
                                 </UU5.Bricks.Button>
-                            </div>
+                            </div> */}
                             <div>
                                 <UU5.Bricks.Button
                                     bgStyle={"transparent"}
@@ -135,7 +135,7 @@ export const LibrarySpa = createVisualComponent({
                             <div>
                                 <UU5.Bricks.Button
                                     bgStyle={"transparent"}
-                                    onClick={goToIngredList}
+                                    onClick={goToIngredientList}
                                 >
                                     <UU5.Bricks.Icon icon="mdi-library"/>
                                     <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Ingredients"}}/>
@@ -154,9 +154,9 @@ export const LibrarySpa = createVisualComponent({
                     routes={{
                         "": {component: <div>home</div>},
                         "bookList": {component: <BookList/>},
-                        "authorList": {component: <AuthorList/>},
+                  //      "authorList": {component: <AuthorList/>},
                         "book": {component: <Book/>},
-                        "author": {component: <Author/>},
+                   //     "author": {component: <Author/>},
                         "ingredientList": {component: <IngredientList/>},
                         "ingredient": {component: <Ingredient/>},
                     }}/>
