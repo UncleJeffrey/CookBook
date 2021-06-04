@@ -86,7 +86,7 @@ export const LibrarySpa = createVisualComponent({
                 left={
                     <UU5.Bricks.Div>
                         <UU5.Bricks.Image src="https://i.imgur.com/MVkHqpM.jpg" type="rounded" />
-                        <UU5.Bricks.Box colorSchema='pink' content='Menu' ></UU5.Bricks.Box>
+                        <UU5.Bricks.Box colorSchema='pink' content='CookBook svatého jednorožce' ></UU5.Bricks.Box>
                         <UU5.Bricks.LanguageSelector displayedLanguages={["cs", "en"]}/>
                         <div className="uu5-common-padding-s">
                             <div>
