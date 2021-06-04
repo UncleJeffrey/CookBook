@@ -35,6 +35,9 @@ app.use("/author-update-form.js", function(req,res) {
 app.use("/book-list.js", function(req,res) {
     res.sendFile(path.join(__dirname+'/hi/book-list.js'));
 })
+app.use("/recipe-list.js", function(req,res) {
+    res.sendFile(path.join(__dirname+'/hi/recipe-list.js'));
+})
 app.use("/book-update-form.js", function(req,res) {
     res.sendFile(path.join(__dirname+'/hi/book-update-form.js'));
 })
