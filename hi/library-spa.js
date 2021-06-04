@@ -114,16 +114,7 @@ export const LibrarySpa = createVisualComponent({
                                     onClick={goToIngredientList}
                                 >
                                     <UU5.Bricks.Icon icon="mdi-library"/>
-                                    <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Autoři"}}/>
-                                </UU5.Bricks.Button>
-                            </div>
-                            <div>
-                                <UU5.Bricks.Button
-                                    bgStyle={"transparent"}
-                                    onClick={goToIngredientList}
-                                >
-                                    <UU5.Bricks.Icon icon="mdi-library"/>
-                                    <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Ingredients"}}/>
+                                    <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Ingredience"}}/>
                                 </UU5.Bricks.Button>
                             </div>
                         </div>
