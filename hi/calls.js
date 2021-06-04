@@ -42,33 +42,33 @@ let Calls = {
     },
 
 
-    createAuthor(dtoIn) {
-        let commandUri = Calls.getCommandUri("author/create");
+    createIngredient(dtoIn) {
+        let commandUri = Calls.getCommandUri("ingredient/create");
         return call("post", commandUri, dtoIn.data);
     },
 
-    getAuthor(dtoIn) {
-        let commandUri = Calls.getCommandUri("author/get");
+    getIngredient(dtoIn) {
+        let commandUri = Calls.getCommandUri("ingredient/get");
         return call("get", commandUri, dtoIn.data);
     },
 
-    updateAuthor(dtoIn) {
-        let commandUri = Calls.getCommandUri("author/update");
+    updateIngredient(dtoIn) {
+        let commandUri = Calls.getCommandUri("ingredient/update");
         return call("post", commandUri, dtoIn.data);
     },
 
-    approveAuthor(dtoIn) {
-        let commandUri = Calls.getCommandUri("author/approve");
+    approveIngredient(dtoIn) {
+        let commandUri = Calls.getCommandUri("ingredient/approve");
         return call("post", commandUri, dtoIn.data);
     },
 
-    deleteAuthor(dtoIn) {
-        let commandUri = Calls.getCommandUri("author/delete");
+    deleteIngredient(dtoIn) {
+        let commandUri = Calls.getCommandUri("ingredient/delete");
         return call("post", commandUri, dtoIn.data);
     },
 
-    listAuthors(dtoIn) {
-        let commandUri = Calls.getCommandUri("author/list");
+    listIngredients(dtoIn) {
+        let commandUri = Calls.getCommandUri("ingredient/list");
         return call("get", commandUri, dtoIn.data);
     },
 

@@ -41,15 +41,25 @@ export const RecipeList = createVisualComponent({
             },
             initialDtoIn: {data: {}}
         });
+<<<<<<< Updated upstream
         const authorListResult = useDataList({
+=======
+        const ingredientListResult = useDataList({
+>>>>>>> Stashed changes
             handlerMap: {
                 load: Calls.listAuthors,
             },
             initialDtoIn: {data: {}}
         });
+<<<<<<< Updated upstream
         const authorMap = {};
         if (authorListResult.data) {
             authorListResult.data.forEach(author => authorMap[author.data.id] = author.data)
+=======
+        const ingredientMap = {};
+        if (ingredientListResult.data) {
+            ingredientListResult.data.forEach(ingredient => ingredientMap[ingredient.data.id] = ingredient.data)
+>>>>>>> Stashed changes
         }
 
         const [selectedRecipeData, setSelectedRecipeData] = useState(null)
@@ -84,10 +94,17 @@ export const RecipeList = createVisualComponent({
             {
                 cell: cellProps => {
                     let result = [];
+<<<<<<< Updated upstream
                     cellProps.data.data.authorList.forEach(authorId => result.push(authorMap[authorId] && authorMap[authorId].name))
                     return result.join(", ")
                 },
                 header: <UU5.Bricks.Lsi lsi={{en: "Authors", cs: "Autoři"}}/>
+=======
+                    cellProps.data.data.ingredientList.forEach(ingredientId => result.push(ingredientMap[ingredientId] && ingredientMap[ingredientId].name))
+                    return result.join(", ")
+                },
+                header: <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Autoři"}}/>
+>>>>>>> Stashed changes
             },
             {
                 cell: cellProps => {

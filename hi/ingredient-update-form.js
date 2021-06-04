@@ -8,7 +8,7 @@ import Calls from "calls";
 
 const STATICS = {
     //@@viewOn:statics
-    displayName: "AuthorUpdateForm",
+    displayName: "IngredientUpdateForm",
     //@@viewOff:statics
 };
 
@@ -16,14 +16,14 @@ const CLASS_NAMES = {
     welcomeRow: () => Config.Css.css``,
 };
 
-export const AuthorUpdateForm = createVisualComponent({
+export const IngredientUpdateForm = createVisualComponent({
     ...STATICS,
 
     //@@viewOn:propTypes
     propTypes: {
         createItem: UU5.PropTypes.func,
-        setSelectedAuthorData: UU5.PropTypes.func,
-        selectedAuthorData: UU5.PropTypes.object
+        setSelectedIngredientData: UU5.PropTypes.func,
+        selectedIngredientData: UU5.PropTypes.object
     },
     //@@viewOff:propTypes
 
@@ -33,12 +33,12 @@ export const AuthorUpdateForm = createVisualComponent({
     render(props) {
         //@@viewOn:private
         function onSave(opt) {
-            if (props.selectedAuthorData && props.selectedAuthorData.data && props.selectedAuthorData.data.id) {
-                props.selectedAuthorData.handlerMap.update({data: opt.values})
+            if (props.selectedIngredientData && props.selectedIngredientData.data && props.selectedIngredientData.data.id) {
+                props.selectedIngredientData.handlerMap.update({data: opt.values})
             } else {
                 props.createItem({data: opt.values})
             }
-            props.setSelectedAuthorData(null)
+            props.setSelectedIngredientData(null)
         }
 
         //@@viewOff:private
@@ -48,16 +48,16 @@ export const AuthorUpdateForm = createVisualComponent({
 
         //@@viewOn:render
         const attrs = UU5.Common.VisualComponent.getAttrs(props);
-        let selectedAuthorData = props.selectedAuthorData && props.selectedAuthorData.data || {}
+        let selectedIngredientData = props.selectedIngredientData && props.selectedIngredientData.data || {}
 
         return (
             <div {...attrs} className={"uu5-common-padding-s"}>
                 <UU5.Forms.Form
                     onSave={onSave}
-                    onCancel={() => props.setSelectedAuthorData(null)}
-                    header={selectedAuthorData && selectedAuthorData.id
-                        ? <UU5.Bricks.Lsi lsi={{en: "Update Author", cs: "Upravit autora"}}/>
-                        : <UU5.Bricks.Lsi lsi={{en: "Create Author", cs: "Vytvořit autora"}}/>
+                    onCancel={() => props.setSelectedIngredientData(null)}
+                    header={selectedIngredientData && selectedIngredientData.id
+                        ? <UU5.Bricks.Lsi lsi={{en: "Update Ingredient", cs: "Upravit autora"}}/>
+                        : <UU5.Bricks.Lsi lsi={{en: "Create Ingredient", cs: "Vytvořit autora"}}/>
                     }
                     spacing={4}
                     level={5}
@@ -69,15 +69,15 @@ export const AuthorUpdateForm = createVisualComponent({
                         label="id"
                         placeholder="id"
                         required
-                        value={selectedAuthorData && selectedAuthorData.id}
-                        readOnly={selectedAuthorData && selectedAuthorData.id}
+                        value={selectedIngredientData && selectedIngredientData.id}
+                        readOnly={selectedIngredientData && selectedIngredientData.id}
                     />
                     <UU5.Forms.Text
                         name="name"
                         label={<UU5.Bricks.Lsi lsi={{en: "Name", cs: "Název"}}/>}
                         placeholder="Some text..."
                         required
-                        value={selectedAuthorData && selectedAuthorData.name}
+                        value={selectedIngredientData && selectedIngredientData.name}
                     />
                     <UU5.Bricks.Line size={"s"}/>
                     <UU5.Forms.Controls/>
@@ -88,4 +88,4 @@ export const AuthorUpdateForm = createVisualComponent({
     },
 });
 
-export default AuthorUpdateForm;
+export default IngredientUpdateForm;

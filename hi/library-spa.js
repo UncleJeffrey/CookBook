@@ -5,9 +5,15 @@ import "uu5g04-bricks";
 import {createVisualComponent} from "uu5g04-hooks";
 
 import Recipe from "recipe";
+<<<<<<< Updated upstream
 import Author from "author";
 import RecipeList from "recipeList";
 import AuthorList from "authorList";
+=======
+import Ingredient from "ingredient";
+import RecipeList from "recipeList";
+import IngredientList from "ingredientList";
+>>>>>>> Stashed changes
 //@@viewOff:imports
 
 const STATICS = {
@@ -50,8 +56,13 @@ export const LibrarySpa = createVisualComponent({
             UU5.Environment.getRouter().setRoute("recipeList")
         }
 
+<<<<<<< Updated upstream
         function goToAuthorList() {
             UU5.Environment.getRouter().setRoute("authorList")
+=======
+        function goToIngredientList() {
+            UU5.Environment.getRouter().setRoute("ingredientList")
+>>>>>>> Stashed changes
         }
 
         //@@viewOff:private
@@ -90,10 +101,17 @@ export const LibrarySpa = createVisualComponent({
                             <div>
                                 <UU5.Bricks.Button
                                     bgStyle={"transparent"}
+<<<<<<< Updated upstream
                                     onClick={goToAuthorList}
                                 >
                                     <UU5.Bricks.Icon icon="mdi-library"/>
                                     <UU5.Bricks.Lsi lsi={{en: "Authors", cs: "Autoři"}}/>
+=======
+                                    onClick={goToIngredientList}
+                                >
+                                    <UU5.Bricks.Icon icon="mdi-library"/>
+                                    <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Autoři"}}/>
+>>>>>>> Stashed changes
                                 </UU5.Bricks.Button>
                             </div>
                         </div>
@@ -109,9 +127,15 @@ export const LibrarySpa = createVisualComponent({
                     routes={{
                         "": {component: <div>home</div>},
                         "recipeList": {component: <RecipeList/>},
+<<<<<<< Updated upstream
                         "authorList": {component: <AuthorList/>},
                         "recipe": {component: <Recipe/>},
                         "author": {component: <Author/>},
+=======
+                        "ingredientList": {component: <IngredientList/>},
+                        "recipe": {component: <Recipe/>},
+                        "ingredient": {component: <Ingredient/>},
+>>>>>>> Stashed changes
                     }}/>
             </UU5.Bricks.Page>
         );
