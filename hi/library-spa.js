@@ -54,6 +54,14 @@ export const LibrarySpa = createVisualComponent({
             UU5.Environment.getRouter().setRoute("authorList")
         }
 
+        function goToIngredList() {
+            UU5.Environment.getRouter().setRoute("ingredList")
+        }
+
+        function goToRecipeList() {
+            UU5.Environment.getRouter().setRoute("authorList")
+        }
+
         //@@viewOff:private
 
         //@@viewOn:interface
@@ -71,7 +79,7 @@ export const LibrarySpa = createVisualComponent({
                         <UU5.Bricks.Lsi lsi={{en: "Ivo's Library", cs: "Ivošova knihovna"}}/>
                     </UU5.Bricks.Box>
                 }
-                bottom={<UU5.Bricks.Box colorSchema="grey" className="center">Copyright Ivo Milota</UU5.Bricks.Box>}
+                bottom={<UU5.Bricks.Box colorSchema="grey" className="center">Open Source</UU5.Bricks.Box>}
                 left={
                     <UU5.Bricks.Div>
                         <UU5.Bricks.Box colorSchema='green' content='Menu'/>
@@ -90,10 +98,29 @@ export const LibrarySpa = createVisualComponent({
                             <div>
                                 <UU5.Bricks.Button
                                     bgStyle={"transparent"}
+                                    onClick={goToBookList}
+                                >
+                                    <UU5.Bricks.Icon icon="mdi-library-books"/>
+                                    <UU5.Bricks.Lsi lsi={{en: "Recipes", cs: "Recepty"}}/>
+                                </UU5.Bricks.Button>
+
+                            </div>
+                            <div>
+                                <UU5.Bricks.Button
+                                    bgStyle={"transparent"}
                                     onClick={goToAuthorList}
                                 >
                                     <UU5.Bricks.Icon icon="mdi-library"/>
                                     <UU5.Bricks.Lsi lsi={{en: "Authors", cs: "Autoři"}}/>
+                                </UU5.Bricks.Button>
+                            </div>
+                            <div>
+                                <UU5.Bricks.Button
+                                    bgStyle={"transparent"}
+                                    onClick={goToIngredList}
+                                >
+                                    <UU5.Bricks.Icon icon="mdi-library"/>
+                                    <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Ingredients"}}/>
                                 </UU5.Bricks.Button>
                             </div>
                         </div>

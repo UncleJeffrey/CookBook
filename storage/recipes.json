@@ -1,0 +1,12 @@
+{
+    "148374":
+    {
+        "id": "148374",
+        "name": "Unicorn Stew",
+        "Description": "Do that then this",
+        "ingredientList":   // id:amount
+        { 
+            "Unicorn balls":200,
+            "Unicorn blood":300
+        }
+    }
