@@ -42,35 +42,6 @@ let Calls = {
     },
 
 
-    createAuthor(dtoIn) {
-        let commandUri = Calls.getCommandUri("author/create");
-        return call("post", commandUri, dtoIn.data);
-    },
-
-    getAuthor(dtoIn) {
-        let commandUri = Calls.getCommandUri("author/get");
-        return call("get", commandUri, dtoIn.data);
-    },
-
-    updateAuthor(dtoIn) {
-        let commandUri = Calls.getCommandUri("author/update");
-        return call("post", commandUri, dtoIn.data);
-    },
-
-    approveAuthor(dtoIn) {
-        let commandUri = Calls.getCommandUri("author/approve");
-        return call("post", commandUri, dtoIn.data);
-    },
-
-    deleteAuthor(dtoIn) {
-        let commandUri = Calls.getCommandUri("author/delete");
-        return call("post", commandUri, dtoIn.data);
-    },
-
-    listAuthors(dtoIn) {
-        let commandUri = Calls.getCommandUri("author/list");
-        return call("get", commandUri, dtoIn.data);
-    },
 
     
 
