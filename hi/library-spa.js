@@ -74,8 +74,9 @@ export const LibrarySpa = createVisualComponent({
                 bottom={<UU5.Bricks.Box colorSchema="grey" className="center">Copyright Ivo Milota</UU5.Bricks.Box>}
                 left={
                     <UU5.Bricks.Div>
-                        <UU5.Bricks.Box colorSchema='green' content='Menu'/>
-                        <UU5.Bricks.LanguageSelector displayedLanguages={["cs", "en", "uk"]}/>
+                        <UU5.Bricks.Image src="https://i.imgur.com/MVkHqpM.jpg" type="rounded" />
+                        <UU5.Bricks.Box colorSchema='pink' content='CookBook svatého jednorožce' ></UU5.Bricks.Box>
+                        <UU5.Bricks.LanguageSelector displayedLanguages={["cs", "en"]}/>
                         <div className="uu5-common-padding-s">
                             <div>
                                 <UU5.Bricks.Button
