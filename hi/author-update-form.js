@@ -56,8 +56,8 @@ export const AuthorUpdateForm = createVisualComponent({
                     onSave={onSave}
                     onCancel={() => props.setSelectedAuthorData(null)}
                     header={selectedAuthorData && selectedAuthorData.id
-                        ? <UU5.Bricks.Lsi lsi={{en: "Update Author", cs: "Upravit autora"}}/>
-                        : <UU5.Bricks.Lsi lsi={{en: "Create Author", cs: "Vytvořit autora"}}/>
+                        ? <UU5.Bricks.Lsi lsi={{en: "Update Author", cs: "Upravit ingrediencea"}}/>
+                        : <UU5.Bricks.Lsi lsi={{en: "Create Author", cs: "Vytvořit ingrediencea"}}/>
                     }
                     spacing={4}
                     level={5}

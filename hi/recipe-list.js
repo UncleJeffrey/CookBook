@@ -87,7 +87,7 @@ export const RecipeList = createVisualComponent({
                     cellProps.data.data.ingredientList.forEach(ingredientId => result.push(ingredientMap[ingredientId] && ingredientMap[ingredientId].name))
                     return result.join(", ")
                 },
-                header: <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Autoři"}}/>
+                header: <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Ingredience"}}/>
             },
             {
                 cell: cellProps => {

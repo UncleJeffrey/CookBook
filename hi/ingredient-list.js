@@ -161,11 +161,11 @@ export const IngredientList = createVisualComponent({
                     selectedIngredientData={selectedIngredientData}
                 />
             </UU5.Bricks.Modal>
-            <UU5.Bricks.Header content={<UU5.Bricks.Lsi lsi={{en: "Ingredient List", cs: "Seznam autorů"}}/>}
+            <UU5.Bricks.Header content={<UU5.Bricks.Lsi lsi={{en: "Ingredient List", cs: "Seznam ingredienceů"}}/>}
                                level={3}/>
             <div className={"right"}>
                 <UU5.Bricks.Button
-                    content={<UU5.Bricks.Lsi lsi={{en: "Create Ingredient", cs: "Vytvořit autora"}}/>}
+                    content={<UU5.Bricks.Lsi lsi={{en: "Create Ingredient", cs: "Vytvořit ingrediencea"}}/>}
                     colorSchema={"green"}
                     onClick={() => setSelectedIngredientData({data: {}})}
                 />

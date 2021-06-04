@@ -101,7 +101,7 @@ export const RecipeUpdateForm = createVisualComponent({
                     />
                     <UU5.Forms.Select
                         name="ingredientList"
-                        label={<UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Autoři"}}/>}
+                        label={<UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Ingredience"}}/>}
                         multiple={true}
                         reguired
                         value={selectedRecipeData && selectedRecipeData.ingredientList}
