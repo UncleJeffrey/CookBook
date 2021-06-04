@@ -165,7 +165,7 @@ export const IngredientList = createVisualComponent({
                                level={3}/>
             <div className={"right"}>
                 <UU5.Bricks.Button
-                    content={<UU5.Bricks.Lsi lsi={{en: "Create Ingredient", cs: "Vytvořit autora"}}/>}
+                    content={<UU5.Bricks.Lsi lsi={{en: "Create Ingredient", cs: "Vytvořit ingredienci"}}/>}
                     colorSchema={"green"}
                     onClick={() => setSelectedIngredientData({data: {}})}
                 />
