@@ -56,8 +56,8 @@ export const IngredientUpdateForm = createVisualComponent({
                     onSave={onSave}
                     onCancel={() => props.setSelectedIngredientData(null)}
                     header={selectedIngredientData && selectedIngredientData.id
-                        ? <UU5.Bricks.Lsi lsi={{en: "Update Ingredient", cs: "Upravit ingrediencea"}}/>
-                        : <UU5.Bricks.Lsi lsi={{en: "Create Ingredient", cs: "Vytvořit ingrediencea"}}/>
+                        ? <UU5.Bricks.Lsi lsi={{en: "Update Ingredient", cs: "Upravit ingredience"}}/>
+                        : <UU5.Bricks.Lsi lsi={{en: "Create Ingredient", cs: "Vytvořit ingredience"}}/>
                     }
                     spacing={4}
                     level={5}
