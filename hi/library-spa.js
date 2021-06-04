@@ -76,17 +76,18 @@ export const LibrarySpa = createVisualComponent({
             <UU5.Bricks.Page
                 {...attrs}
                 type="1"
-                leftWrapperProps={{style: {backgroundColor: '#fafafa'}}}
+                leftWrapperProps={{style: {backgroundColor: '#ffe4ec'}}}
                 top={
-                    <UU5.Bricks.Box colorSchema="blue-rich" className="center">
-                        <UU5.Bricks.Lsi lsi={{en: "Ivo's Library", cs: "Ivošova knihovna"}}/>
+                    <UU5.Bricks.Box colorSchema="pink" className="center">
+                        <UU5.Bricks.Lsi lsi={{en: "uuCookBook - Team 6", cs: "uuCookBook - Tým 6"}}/>
                     </UU5.Bricks.Box>
                 }
-                bottom={<UU5.Bricks.Box colorSchema="grey" className="center">Open Source</UU5.Bricks.Box>}
+                bottom={<UU5.Bricks.Box colorSchema="pink" className="center">Open Source</UU5.Bricks.Box>}
                 left={
                     <UU5.Bricks.Div>
-                        <UU5.Bricks.Box colorSchema='green' content='Menu'/>
-                        <UU5.Bricks.LanguageSelector displayedLanguages={["cs", "en", "uk"]}/>
+                        <UU5.Bricks.Image src="https://i.imgur.com/MVkHqpM.jpg" type="rounded" />
+                        <UU5.Bricks.Box colorSchema='pink' content='Menu' ></UU5.Bricks.Box>
+                        <UU5.Bricks.LanguageSelector displayedLanguages={["cs", "en"]}/>
                         <div className="uu5-common-padding-s">
                             <div>
                                 <UU5.Bricks.Button
@@ -94,7 +95,7 @@ export const LibrarySpa = createVisualComponent({
                                     onClick={goToBookList}
                                 >
                                     <UU5.Bricks.Icon icon="mdi-library-books"/>
-                                    <UU5.Bricks.Lsi lsi={{en: "Books", cs: "Knihy", uk: "Yкраїнський"}}/>
+                                    <UU5.Bricks.Lsi lsi={{en: "Books", cs: "Knihy"}}/>
                                 </UU5.Bricks.Button>
 
                             </div>
