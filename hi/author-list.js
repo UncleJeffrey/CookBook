@@ -63,7 +63,7 @@ export const AuthorList = createVisualComponent({
                         return (
                             <div className={"right"}>
                                 <UU5.Bricks.Button
-                                    content={<UU5.Bricks.Icon icon={"mdi-book-open"}/>}
+                                    content={<UU5.Bricks.Icon icon={"mdi-recipe-open"}/>}
                                     onClick={() => showAuthor(cellProps.data.data.id)}
                                     bgStyle={"transparent"}
                                 />

@@ -51,7 +51,7 @@ export const Author = createVisualComponent({
         const attrs = UU5.Common.VisualComponent.getAttrs(props);
         return (
             <div {...attrs}>
-                <UU5.Bricks.Button content={"book"} onClick={() => UU5.Environment.getRouter().setRoute("book")} />
+                <UU5.Bricks.Button content={"recipe"} onClick={() => UU5.Environment.getRouter().setRoute("recipe")} />
                 <div>Author</div>
             </div>
         );

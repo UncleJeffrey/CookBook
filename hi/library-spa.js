@@ -4,9 +4,9 @@ import UU5 from "uu5g04";
 import "uu5g04-bricks";
 import {createVisualComponent} from "uu5g04-hooks";
 
-import Book from "book";
+import Recipe from "recipe";
 import Author from "author";
-import BookList from "bookList";
+import RecipeList from "recipeList";
 import AuthorList from "authorList";
 //@@viewOff:imports
 
@@ -46,19 +46,11 @@ export const LibrarySpa = createVisualComponent({
 
     render(props) {
         //@@viewOn:private
-        function goToBookList() {
-            UU5.Environment.getRouter().setRoute("bookList")
+        function goToRecipeList() {
+            UU5.Environment.getRouter().setRoute("recipeList")
         }
 
         function goToAuthorList() {
-            UU5.Environment.getRouter().setRoute("authorList")
-        }
-
-        function goToIngredList() {
-            UU5.Environment.getRouter().setRoute("ingredList")
-        }
-
-        function goToRecipeList() {
             UU5.Environment.getRouter().setRoute("authorList")
         }
 
@@ -79,7 +71,7 @@ export const LibrarySpa = createVisualComponent({
                         <UU5.Bricks.Lsi lsi={{en: "Ivo's Library", cs: "Ivošova knihovna"}}/>
                     </UU5.Bricks.Box>
                 }
-                bottom={<UU5.Bricks.Box colorSchema="grey" className="center">Open Source</UU5.Bricks.Box>}
+                bottom={<UU5.Bricks.Box colorSchema="grey" className="center">Copyright Ivo Milota</UU5.Bricks.Box>}
                 left={
                     <UU5.Bricks.Div>
                         <UU5.Bricks.Box colorSchema='green' content='Menu'/>
@@ -88,20 +80,10 @@ export const LibrarySpa = createVisualComponent({
                             <div>
                                 <UU5.Bricks.Button
                                     bgStyle={"transparent"}
-                                    onClick={goToBookList}
+                                    onClick={goToRecipeList}
                                 >
-                                    <UU5.Bricks.Icon icon="mdi-library-books"/>
-                                    <UU5.Bricks.Lsi lsi={{en: "Books", cs: "Knihy", uk: "Yкраїнський"}}/>
-                                </UU5.Bricks.Button>
-
-                            </div>
-                            <div>
-                                <UU5.Bricks.Button
-                                    bgStyle={"transparent"}
-                                    onClick={goToBookList}
-                                >
-                                    <UU5.Bricks.Icon icon="mdi-library-books"/>
-                                    <UU5.Bricks.Lsi lsi={{en: "Recipes", cs: "Recepty"}}/>
+                                    <UU5.Bricks.Icon icon="mdi-library-recipes"/>
+                                    <UU5.Bricks.Lsi lsi={{en: "Recipes", cs: "Knihy", uk: "Yкраїнський"}}/>
                                 </UU5.Bricks.Button>
 
                             </div>
@@ -112,15 +94,6 @@ export const LibrarySpa = createVisualComponent({
                                 >
                                     <UU5.Bricks.Icon icon="mdi-library"/>
                                     <UU5.Bricks.Lsi lsi={{en: "Authors", cs: "Autoři"}}/>
-                                </UU5.Bricks.Button>
-                            </div>
-                            <div>
-                                <UU5.Bricks.Button
-                                    bgStyle={"transparent"}
-                                    onClick={goToIngredList}
-                                >
-                                    <UU5.Bricks.Icon icon="mdi-library"/>
-                                    <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Ingredients"}}/>
                                 </UU5.Bricks.Button>
                             </div>
                         </div>
@@ -135,9 +108,9 @@ export const LibrarySpa = createVisualComponent({
                     basePath={""}
                     routes={{
                         "": {component: <div>home</div>},
-                        "bookList": {component: <BookList/>},
+                        "recipeList": {component: <RecipeList/>},
                         "authorList": {component: <AuthorList/>},
-                        "book": {component: <Book/>},
+                        "recipe": {component: <Recipe/>},
                         "author": {component: <Author/>},
                     }}/>
             </UU5.Bricks.Page>

@@ -11,33 +11,33 @@ const call = async (method, uri, dtoIn) => {
 let Calls = {
     /** URL containing app base, e.g. "https://uuos9.plus4u.net/vnd-app/awid/". */
 
-    createBook(dtoIn) {
-        let commandUri = Calls.getCommandUri("book/create");
+    createRecipe(dtoIn) {
+        let commandUri = Calls.getCommandUri("recipe/create");
         return call("post", commandUri, dtoIn.data);
     },
 
-    getBook(dtoIn) {
-        let commandUri = Calls.getCommandUri("book/get");
+    getRecipe(dtoIn) {
+        let commandUri = Calls.getCommandUri("recipe/get");
         return call("get", commandUri, dtoIn.data);
     },
 
-    updateBook(dtoIn) {
-        let commandUri = Calls.getCommandUri("book/update");
+    updateRecipe(dtoIn) {
+        let commandUri = Calls.getCommandUri("recipe/update");
         return call("post", commandUri, dtoIn.data);
     },
 
-    deleteBook(dtoIn) {
-        let commandUri = Calls.getCommandUri("book/delete");
+    deleteRecipe(dtoIn) {
+        let commandUri = Calls.getCommandUri("recipe/delete");
         return call("post", commandUri, dtoIn.data);
     },
 
-    listBooks(dtoIn) {
-        let commandUri = Calls.getCommandUri("book/list");
+    listRecipes(dtoIn) {
+        let commandUri = Calls.getCommandUri("recipe/list");
         return call("get", commandUri, dtoIn.data);
     },
 
-    bookImageCreate(dtoIn) {
-        let commandUri = Calls.getCommandUri("bookImage/create");
+    recipeImageCreate(dtoIn) {
+        let commandUri = Calls.getCommandUri("recipeImage/create");
         return call("post", commandUri, dtoIn.data, { contentType: "multipart/form-data"});
     },
 
