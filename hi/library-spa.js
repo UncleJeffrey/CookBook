@@ -5,9 +5,9 @@ import "uu5g04-bricks";
 import {createVisualComponent} from "uu5g04-hooks";
 
 import Recipe from "recipe";
-import Author from "author";
+import Ingredient from "ingredient";
 import RecipeList from "recipeList";
-import AuthorList from "authorList";
+import IngredientList from "ingredientList";
 //@@viewOff:imports
 
 const STATICS = {
@@ -50,8 +50,8 @@ export const LibrarySpa = createVisualComponent({
             UU5.Environment.getRouter().setRoute("recipeList")
         }
 
-        function goToAuthorList() {
-            UU5.Environment.getRouter().setRoute("authorList")
+        function goToIngredientList() {
+            UU5.Environment.getRouter().setRoute("ingredientList")
         }
 
         //@@viewOff:private
@@ -90,10 +90,10 @@ export const LibrarySpa = createVisualComponent({
                             <div>
                                 <UU5.Bricks.Button
                                     bgStyle={"transparent"}
-                                    onClick={goToAuthorList}
+                                    onClick={goToIngredientList}
                                 >
                                     <UU5.Bricks.Icon icon="mdi-library"/>
-                                    <UU5.Bricks.Lsi lsi={{en: "Authors", cs: "Autoři"}}/>
+                                    <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Autoři"}}/>
                                 </UU5.Bricks.Button>
                             </div>
                         </div>
@@ -109,9 +109,9 @@ export const LibrarySpa = createVisualComponent({
                     routes={{
                         "": {component: <div>home</div>},
                         "recipeList": {component: <RecipeList/>},
-                        "authorList": {component: <AuthorList/>},
+                        "ingredientList": {component: <IngredientList/>},
                         "recipe": {component: <Recipe/>},
-                        "author": {component: <Author/>},
+                        "ingredient": {component: <Ingredient/>},
                     }}/>
             </UU5.Bricks.Page>
         );

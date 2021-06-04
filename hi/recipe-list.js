@@ -41,15 +41,15 @@ export const RecipeList = createVisualComponent({
             },
             initialDtoIn: {data: {}}
         });
-        const authorListResult = useDataList({
+        const ingredientListResult = useDataList({
             handlerMap: {
-                load: Calls.listAuthors,
+                load: Calls.listIngredients,
             },
             initialDtoIn: {data: {}}
         });
-        const authorMap = {};
-        if (authorListResult.data) {
-            authorListResult.data.forEach(author => authorMap[author.data.id] = author.data)
+        const ingredientMap = {};
+        if (ingredientListResult.data) {
+            ingredientListResult.data.forEach(ingredient => ingredientMap[ingredient.data.id] = ingredient.data)
         }
 
         const [selectedRecipeData, setSelectedRecipeData] = useState(null)
@@ -84,10 +84,10 @@ export const RecipeList = createVisualComponent({
             {
                 cell: cellProps => {
                     let result = [];
-                    cellProps.data.data.authorList.forEach(authorId => result.push(authorMap[authorId] && authorMap[authorId].name))
+                    cellProps.data.data.ingredientList.forEach(ingredientId => result.push(ingredientMap[ingredientId] && ingredientMap[ingredientId].name))
                     return result.join(", ")
                 },
-                header: <UU5.Bricks.Lsi lsi={{en: "Authors", cs: "Autoři"}}/>
+                header: <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Autoři"}}/>
             },
             {
                 cell: cellProps => {
