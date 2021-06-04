@@ -7,7 +7,7 @@ import {createVisualComponent} from "uu5g04-hooks";
 
 const STATICS = {
     //@@viewOn:statics
-    displayName: "Ingredient",
+    displayName: "Author",
     //@@viewOff:statics
 };
 
@@ -30,7 +30,7 @@ const CLASS_NAMES = {
   `,
 };
 
-export const Ingredient = createVisualComponent({
+export const Author = createVisualComponent({
     ...STATICS,
 
     //@@viewOn:propTypes
@@ -52,15 +52,11 @@ export const Ingredient = createVisualComponent({
         return (
             <div {...attrs}>
                 <UU5.Bricks.Button content={"recipe"} onClick={() => UU5.Environment.getRouter().setRoute("recipe")} />
-<<<<<<< Updated upstream:hi/author.js
                 <div>Author</div>
-=======
-                <div>Ingredient</div>
->>>>>>> Stashed changes:hi/ingredient.js
             </div>
         );
         //@@viewOff:render
     },
 });
 
-export default Ingredient;
+export default Author;

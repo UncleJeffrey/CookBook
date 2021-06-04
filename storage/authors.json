@@ -1,17 +1,22 @@
 {
   "148374": {
     "id": "148374",
-    "name": "Pičo unicorn",
+    "name": "Jo Nesbø",
     "approved": true
   },
   "149104": {
     "id": "149104",
     "name": "Isaac Asimov",
-    "approved": true
+    "approved": false
   },
   "151552": {
     "id": "151552",
-    "name": "Arthur C. Clarkes",
+    "name": "Arthur C. Clarke",
+    "approved": true
+  },
+  "152182": {
+    "id": "152182",
+    "name": "Jules Verne",
     "approved": true
   },
   "161240": {
@@ -21,7 +26,7 @@
   },
   "178870": {
     "id": "178870",
-    "name": "Robert Galbraithě",
+    "name": "Robert Galbraith",
     "approved": true
   }
 }

@@ -65,11 +65,7 @@ export const Recipe = createVisualComponent({
         const attrs = UU5.Common.VisualComponent.getAttrs(props);
         return (
             <div {...attrs}>
-<<<<<<< Updated upstream:hi/recipe.js
                 <UU5.Bricks.Button content={"author"} onClick={() => UU5.Environment.getRouter().setRoute("author")} />
-=======
-                <UU5.Bricks.Button content={"ingredient"} onClick={() => UU5.Environment.getRouter().setRoute("ingredient")} />
->>>>>>> Stashed changes:hi/book.js
                 <RecipeUpdateForm />
                 <pre>{JSON.stringify(recipeDataObject.data || {}, null, 2)}</pre>
             </div>

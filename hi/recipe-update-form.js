@@ -34,19 +34,19 @@ export const RecipeUpdateForm = createVisualComponent({
         //@@viewOn:private
         const dataListResult = useDataList({
             handlerMap: {
-                load: Calls.listIngredients,
+                load: Calls.listAuthors,
             },
             initialDtoIn: {data: {}}
         });
 
-        let ingredientList = [];
-        dataListResult.data && dataListResult.data.forEach(ingredient => {
-            if (ingredient.data.approved) {
-                ingredientList.push(
+        let authorList = [];
+        dataListResult.data && dataListResult.data.forEach(author => {
+            if (author.data.approved) {
+                authorList.push(
                     <UU5.Forms.Select.Option
-                        key={ingredient.data.id}
-                        value={ingredient.data.id}
-                        content={ingredient.data.name}
+                        key={author.data.id}
+                        value={author.data.id}
+                        content={author.data.name}
                     />
                 )
             }
@@ -100,17 +100,13 @@ export const RecipeUpdateForm = createVisualComponent({
                         value={selectedRecipeData && selectedRecipeData.name}
                     />
                     <UU5.Forms.Select
-                        name="ingredientList"
-                        label={<UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Autoři"}}/>}
+                        name="authorList"
+                        label={<UU5.Bricks.Lsi lsi={{en: "Authors", cs: "Autoři"}}/>}
                         multiple={true}
                         reguired
-<<<<<<< Updated upstream:hi/recipe-update-form.js
                         value={selectedRecipeData && selectedRecipeData.authorList}
-=======
-                        value={selectedRecipeData && selectedRecipeData.ingredientList}
->>>>>>> Stashed changes:hi/book-update-form.js
                     >
-                        {ingredientList}
+                        {authorList}
                     </UU5.Forms.Select>
                     <UU5.Bricks.Line size={"s"}/>
                     <UU5.Forms.Controls/>

@@ -4,13 +4,13 @@ import UU5 from "uu5g04";
 import "uu5g04-bricks";
 import {createVisualComponent, useDataList, useState} from "uu5g04-hooks";
 import Uu5Tiles from "uu5tilesg02";
-import IngredientUpdateForm from "ingredientUpdateForm";
+import AuthorUpdateForm from "authorUpdateForm";
 import Calls from "calls";
 //@@viewOff:imports
 
 const STATICS = {
     //@@viewOn:statics
-    displayName: "IngredientList",
+    displayName: "AuthorList",
     //@@viewOff:statics
 };
 
@@ -18,7 +18,7 @@ const CLASS_NAMES = {
     welcomeRow: () => Config.Css.css``,
 };
 
-export const IngredientList = createVisualComponent({
+export const AuthorList = createVisualComponent({
     ...STATICS,
 
     //@@viewOn:propTypes
@@ -31,18 +31,18 @@ export const IngredientList = createVisualComponent({
         //@@viewOn:private
         const dataListResult = useDataList({
             handlerMap: {
-                load: Calls.listIngredients,
-                createItem: Calls.createIngredient
+                load: Calls.listAuthors,
+                createItem: Calls.createAuthor
             },
             itemHandlerMap: {
-                update: Calls.updateIngredient,
-                approve: Calls.approveIngredient,
-                delete: Calls.deleteIngredient
+                update: Calls.updateAuthor,
+                approve: Calls.approveAuthor,
+                delete: Calls.deleteAuthor
             },
             initialDtoIn: {data: {}}
         });
 
-        const [selectedIngredientData, setSelectedIngredientData] = useState(null)
+        const [selectedAuthorData, setSelectedAuthorData] = useState(null)
         const [showAcceptedOnly, setShowAcceptedOnly] = useState(true)
 
         const columns = [
@@ -64,18 +64,14 @@ export const IngredientList = createVisualComponent({
                             <div className={"right"}>
                                 <UU5.Bricks.Button
                                     content={<UU5.Bricks.Icon icon={"mdi-recipe-open"}/>}
-<<<<<<< Updated upstream:hi/author-list.js
                                     onClick={() => showAuthor(cellProps.data.data.id)}
-=======
-                                    onClick={() => showIngredient(cellProps.data.data.id)}
->>>>>>> Stashed changes:hi/ingredient-list.js
                                     bgStyle={"transparent"}
                                 />
                                 <UU5.Bricks.Button
                                     content={<UU5.Bricks.Icon icon={"mdi-pencil"}/>}
                                     colorSchema={"blue"}
                                     bgStyle={"transparent"}
-                                    onClick={() => setSelectedIngredientData(cellProps.data)}
+                                    onClick={() => setSelectedAuthorData(cellProps.data)}
                                 />
                                 <UU5.Bricks.Button
                                     content={<UU5.Bricks.Icon icon={"mdi-delete"}/>}
@@ -144,9 +140,9 @@ export const IngredientList = createVisualComponent({
             return child;
         }
 
-    function showIngredient(id)
+    function showAuthor(id)
         {
-            UU5.Environment.getRouter().setRoute("ingredient", {id: id})
+            UU5.Environment.getRouter().setRoute("author", {id: id})
         }
 
     //@@viewOff:private
@@ -158,20 +154,20 @@ export const IngredientList = createVisualComponent({
     const attrs = UU5.Common.VisualComponent.getAttrs(props);
     return (
         <div {...attrs} className={"uu5-common-padding-s"}>
-            <UU5.Bricks.Modal offsetTop={100} shown={selectedIngredientData}>
-                <IngredientUpdateForm
+            <UU5.Bricks.Modal offsetTop={100} shown={selectedAuthorData}>
+                <AuthorUpdateForm
                     createItem={dataListResult.handlerMap.createItem}
-                    setSelectedIngredientData={setSelectedIngredientData}
-                    selectedIngredientData={selectedIngredientData}
+                    setSelectedAuthorData={setSelectedAuthorData}
+                    selectedAuthorData={selectedAuthorData}
                 />
             </UU5.Bricks.Modal>
-            <UU5.Bricks.Header content={<UU5.Bricks.Lsi lsi={{en: "Ingredient List", cs: "Seznam autorů"}}/>}
+            <UU5.Bricks.Header content={<UU5.Bricks.Lsi lsi={{en: "Author List", cs: "Seznam autorů"}}/>}
                                level={3}/>
             <div className={"right"}>
                 <UU5.Bricks.Button
-                    content={<UU5.Bricks.Lsi lsi={{en: "Create Ingredient", cs: "Vytvořit autora"}}/>}
+                    content={<UU5.Bricks.Lsi lsi={{en: "Create Author", cs: "Vytvořit autora"}}/>}
                     colorSchema={"green"}
-                    onClick={() => setSelectedIngredientData({data: {}})}
+                    onClick={() => setSelectedAuthorData({data: {}})}
                 />
                 <UU5.Bricks.Button
                     content={showAcceptedOnly
@@ -189,4 +185,4 @@ export const IngredientList = createVisualComponent({
     },
     });
 
-    export default IngredientList;
+    export default AuthorList;

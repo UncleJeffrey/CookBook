@@ -3,7 +3,6 @@ const LibraryDao = require("../../dao/recipe-dao");
 let dao = new LibraryDao(path.join(__dirname, "..", "..", "storage", "recipes.json"))
 
 async function UpdateAbl(req, res) {
-<<<<<<< Updated upstream:abl/recipe/update-abl.js
     let {id, name, authorList} = req.body;
     if (
         (id && typeof id === "string" && id.length < 25) &&
@@ -11,15 +10,6 @@ async function UpdateAbl(req, res) {
         (authorList && authorList.length > 0 && authorList.length < 10)
     ) {
         const recipe = {id, name, authorList};
-=======
-    let {id, name, ingredientList} = req.body;
-    if (
-        (id && typeof id === "string" && id.length < 25) &&
-        (name && typeof name === "string" && name.length < 200) &&
-        (ingredientList && ingredientList.length > 0 && ingredientList.length < 10)
-    ) {
-        const recipe = {id, name, ingredientList};
->>>>>>> Stashed changes:abl/book/update-abl.js
         try {
             let result = await dao.updateRecipe(recipe);
             res.status(200).json(result);

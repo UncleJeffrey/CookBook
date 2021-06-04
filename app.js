@@ -4,11 +4,7 @@ const express = require("express");
 const path = require('path');
 
 const recipeRouter = require("./controller/recipe-controller");
-<<<<<<< Updated upstream
 const authorRouter = require("./controller/author-controller");
-=======
-const ingredientRouter = require("./controller/ingredient-controller");
->>>>>>> Stashed changes
 const recipeImageRouter = require("./controller/recipe-image-controller");
 
 const app = express();
@@ -17,11 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/recipe/", recipeRouter);
-<<<<<<< Updated upstream
 app.use("/author/", authorRouter);
-=======
-app.use("/ingredient/", ingredientRouter);
->>>>>>> Stashed changes
 app.use("/recipeImage/", recipeImageRouter);
 
 app.use("/library-spa.js", function(req,res) {
@@ -30,14 +22,14 @@ app.use("/library-spa.js", function(req,res) {
 app.use("/recipe.js", function(req,res) {
     res.sendFile(path.join(__dirname+'/hi/recipe.js'));
 })
-app.use("/ingredient.js", function(req,res) {
-    res.sendFile(path.join(__dirname+'/hi/ingredient.js'));
+app.use("/author.js", function(req,res) {
+    res.sendFile(path.join(__dirname+'/hi/author.js'));
 })
-app.use("/ingredient-list.js", function(req,res) {
-    res.sendFile(path.join(__dirname+'/hi/ingredient-list.js'));
+app.use("/author-list.js", function(req,res) {
+    res.sendFile(path.join(__dirname+'/hi/author-list.js'));
 })
-app.use("/ingredient-update-form.js", function(req,res) {
-    res.sendFile(path.join(__dirname+'/hi/ingredient-update-form.js'));
+app.use("/author-update-form.js", function(req,res) {
+    res.sendFile(path.join(__dirname+'/hi/author-update-form.js'));
 })
 app.use("/recipe-list.js", function(req,res) {
     res.sendFile(path.join(__dirname+'/hi/recipe-list.js'));

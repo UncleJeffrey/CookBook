@@ -8,7 +8,7 @@ import Calls from "calls";
 
 const STATICS = {
     //@@viewOn:statics
-    displayName: "IngredientUpdateForm",
+    displayName: "AuthorUpdateForm",
     //@@viewOff:statics
 };
 
@@ -16,14 +16,14 @@ const CLASS_NAMES = {
     welcomeRow: () => Config.Css.css``,
 };
 
-export const IngredientUpdateForm = createVisualComponent({
+export const AuthorUpdateForm = createVisualComponent({
     ...STATICS,
 
     //@@viewOn:propTypes
     propTypes: {
         createItem: UU5.PropTypes.func,
-        setSelectedIngredientData: UU5.PropTypes.func,
-        selectedIngredientData: UU5.PropTypes.object
+        setSelectedAuthorData: UU5.PropTypes.func,
+        selectedAuthorData: UU5.PropTypes.object
     },
     //@@viewOff:propTypes
 
@@ -33,12 +33,12 @@ export const IngredientUpdateForm = createVisualComponent({
     render(props) {
         //@@viewOn:private
         function onSave(opt) {
-            if (props.selectedIngredientData && props.selectedIngredientData.data && props.selectedIngredientData.data.id) {
-                props.selectedIngredientData.handlerMap.update({data: opt.values})
+            if (props.selectedAuthorData && props.selectedAuthorData.data && props.selectedAuthorData.data.id) {
+                props.selectedAuthorData.handlerMap.update({data: opt.values})
             } else {
                 props.createItem({data: opt.values})
             }
-            props.setSelectedIngredientData(null)
+            props.setSelectedAuthorData(null)
         }
 
         //@@viewOff:private
@@ -48,16 +48,16 @@ export const IngredientUpdateForm = createVisualComponent({
 
         //@@viewOn:render
         const attrs = UU5.Common.VisualComponent.getAttrs(props);
-        let selectedIngredientData = props.selectedIngredientData && props.selectedIngredientData.data || {}
+        let selectedAuthorData = props.selectedAuthorData && props.selectedAuthorData.data || {}
 
         return (
             <div {...attrs} className={"uu5-common-padding-s"}>
                 <UU5.Forms.Form
                     onSave={onSave}
-                    onCancel={() => props.setSelectedIngredientData(null)}
-                    header={selectedIngredientData && selectedIngredientData.id
-                        ? <UU5.Bricks.Lsi lsi={{en: "Update Ingredient", cs: "Upravit autora"}}/>
-                        : <UU5.Bricks.Lsi lsi={{en: "Create Ingredient", cs: "Vytvořit autora"}}/>
+                    onCancel={() => props.setSelectedAuthorData(null)}
+                    header={selectedAuthorData && selectedAuthorData.id
+                        ? <UU5.Bricks.Lsi lsi={{en: "Update Author", cs: "Upravit autora"}}/>
+                        : <UU5.Bricks.Lsi lsi={{en: "Create Author", cs: "Vytvořit autora"}}/>
                     }
                     spacing={4}
                     level={5}
@@ -69,15 +69,15 @@ export const IngredientUpdateForm = createVisualComponent({
                         label="id"
                         placeholder="id"
                         required
-                        value={selectedIngredientData && selectedIngredientData.id}
-                        readOnly={selectedIngredientData && selectedIngredientData.id}
+                        value={selectedAuthorData && selectedAuthorData.id}
+                        readOnly={selectedAuthorData && selectedAuthorData.id}
                     />
                     <UU5.Forms.Text
                         name="name"
                         label={<UU5.Bricks.Lsi lsi={{en: "Name", cs: "Název"}}/>}
                         placeholder="Some text..."
                         required
-                        value={selectedIngredientData && selectedIngredientData.name}
+                        value={selectedAuthorData && selectedAuthorData.name}
                     />
                     <UU5.Bricks.Line size={"s"}/>
                     <UU5.Forms.Controls/>
@@ -88,4 +88,4 @@ export const IngredientUpdateForm = createVisualComponent({
     },
 });
 
-export default IngredientUpdateForm;
+export default AuthorUpdateForm;
