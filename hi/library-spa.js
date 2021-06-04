@@ -7,7 +7,6 @@ import {createVisualComponent} from "uu5g04-hooks";
 import Book from "book";
 import Author from "author";
 import BookList from "bookList";
-import RecipeList from "recipeList";
 import AuthorList from "authorList";
 //@@viewOff:imports
 
@@ -60,7 +59,7 @@ export const LibrarySpa = createVisualComponent({
         }
 
         function goToRecipeList() {
-            UU5.Environment.getRouter().setRoute("recipeList")
+            UU5.Environment.getRouter().setRoute("authorList")
         }
 
         //@@viewOff:private
@@ -99,7 +98,7 @@ export const LibrarySpa = createVisualComponent({
                             <div>
                                 <UU5.Bricks.Button
                                     bgStyle={"transparent"}
-                                    onClick={goToRecipeList}
+                                    onClick={goToBookList}
                                 >
                                     <UU5.Bricks.Icon icon="mdi-library-books"/>
                                     <UU5.Bricks.Lsi lsi={{en: "Recipes", cs: "Recepty"}}/>
@@ -137,7 +136,6 @@ export const LibrarySpa = createVisualComponent({
                     routes={{
                         "": {component: <div>home</div>},
                         "bookList": {component: <BookList/>},
-                        "recipeList": {component: <RecipeList/>},
                         "authorList": {component: <AuthorList/>},
                         "book": {component: <Book/>},
                         "author": {component: <Author/>},
