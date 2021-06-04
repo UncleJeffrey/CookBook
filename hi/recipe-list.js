@@ -2,7 +2,7 @@
 import React from "react";
 import UU5 from "uu5g04";
 import "uu5g04-bricks";
-import {createVisualComponent, useDataList, useState} from "uu5g04-hooks";
+import { createVisualComponent, useDataList, useState } from "uu5g04-hooks";
 import Uu5Tiles from "uu5tilesg02";
 import BookUpdateForm from "bookUpdateForm";
 import BookImageForm from "bookImageForm";
@@ -11,15 +11,15 @@ import Calls from "calls";
 
 const STATICS = {
     //@@viewOn:statics
-    displayName: "BookList",
+    displayName: "RecipeList",
     //@@viewOff:statics
 };
 
 const CLASS_NAMES = {
-    welcomeRow: () => Config.Css.css``,
+    welcomeRow: () => Config.Css.css ``,
 };
 
-export const BookList = createVisualComponent({
+export const RecipeList = createVisualComponent({
     ...STATICS,
 
     //@@viewOn:propTypes
@@ -32,24 +32,24 @@ export const BookList = createVisualComponent({
         //@@viewOn:private
         const dataListResult = useDataList({
             handlerMap: {
-                load: Calls.listBooks,
-                createItem: Calls.createBook
+                load: Calls.listRecipes,
+                createItem: Calls.createRecipe
             },
             itemHandlerMap: {
-                update: Calls.updateBook,
-                delete: Calls.deleteBook
+                update: Calls.updateRecipe,
+                delete: Calls.deleteRecipe
             },
-            initialDtoIn: {data: {}}
+            initialDtoIn: { data: {} }
         });
-        const IngredientListResult = useDataList({
+        const authorListResult = useDataList({
             handlerMap: {
-                load: Calls.listIngredients,
+                load: Calls.listAuthors,
             },
-            initialDtoIn: {data: {}}
+            initialDtoIn: { data: {} }
         });
-        const IngredientMap = {};
-        if (IngredientListResult.data) {
-            IngredientListResult.data.forEach(Ingredient => IngredientMap[Ingredient.data.id] = Ingredient.data)
+        const authorMap = {};
+        if (authorListResult.data) {
+            authorListResult.data.forEach(author => authorMap[author.data.id] = author.data)
         }
 
         const [selectedBookData, setSelectedBookData] = useState(null)
@@ -79,10 +79,9 @@ export const BookList = createVisualComponent({
             },
             {
                 cell: cellProps => {
-                    //return cellProps.data.data.id
-                    return cellProps.data.data.ingredients // debug
+                    return cellProps.data.data.id
                 },
-                header: "Ingredients",
+                header: "mihads",
                 width: "200px"
             },
             {
@@ -92,10 +91,10 @@ export const BookList = createVisualComponent({
             {
                 cell: cellProps => {
                     let result = [];
-                    cellProps.data.data.IngredientList.forEach(IngredientId => result.push(IngredientMap[IngredientId] && IngredientMap[IngredientId].name))
+                    cellProps.data.data.authorList.forEach(authorId => result.push(authorMap[authorId] && authorMap[authorId].name))
                     return result.join(", ")
                 },
-                header: <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Ingredience"}}/>
+                header: <UU5.Bricks.Lsi lsi={{en: "Authors", cs: "Autoři"}}/>
             },
             {
                 cell: cellProps => {
@@ -103,7 +102,7 @@ export const BookList = createVisualComponent({
                         <div className={"right"}>
                             <UU5.Bricks.Button
                                 content={<UU5.Bricks.Icon icon={"mdi-book-open"}/>}
-                                onClick={() => showBook(cellProps.data.data.id)}
+                                onClick={() => showRecipe(cellProps.data.data.id)}
                                 bgStyle={"transparent"}
                             />
                             <UU5.Bricks.Button
@@ -116,7 +115,7 @@ export const BookList = createVisualComponent({
                                 content={<UU5.Bricks.Icon icon={"mdi-file-image"}/>}
                                 colorSchema={"blue"}
                                 bgStyle={"transparent"}
-                                onClick={() => setAddBookImageData(cellProps.data)}
+                                onClick={() => setAddRecipeImageData(cellProps.data)}
                                 tooltip={{en: "add cover", cs: "přidat obal"}}
                             />
                             <UU5.Bricks.Button
@@ -160,7 +159,7 @@ export const BookList = createVisualComponent({
         }
 
         function showBook(id) {
-            UU5.Environment.getRouter().setRoute("book", {id: id})
+            UU5.Environment.getRouter().setRoute("book", { id: id })
         }
 
         //@@viewOff:private
@@ -171,33 +170,34 @@ export const BookList = createVisualComponent({
         //@@viewOn:render
         const attrs = UU5.Common.VisualComponent.getAttrs(props);
         return (
-            <div {...attrs} className={"uu5-common-padding-s"}>
-                <UU5.Bricks.Modal offsetTop={100} shown={selectedBookData}>
-                    <BookUpdateForm
-                        createItem={dataListResult.handlerMap.createItem}
-                        setSelectedBookData={setSelectedBookData}
-                        selectedBookData={selectedBookData}
-                    />
-                </UU5.Bricks.Modal>
-                <UU5.Bricks.Modal offsetTop={100} shown={addBookImageData}>
-                    <BookImageForm
-                        setAddBookImageData={setAddBookImageData}
-                        addBookImageData={addBookImageData}
-                    />
-                </UU5.Bricks.Modal>
-                <UU5.Bricks.Header content={<UU5.Bricks.Lsi lsi={{en: "Book List", cs: "Seznam knih"}}/>} level={3}/>
-                <div className={"right"}>
-                    <UU5.Bricks.Button
-                        content={<UU5.Bricks.Lsi lsi={{en: "Create Book", cs: "Vytvořit knihu"}}/>}
-                        colorSchema={"green"}
-                        onClick={() => setSelectedBookData({data: {}})}
-                    />
-                </div>
-                {getChild()}
-            </div>
+            // <div {...attrs} className={"uu5-common-padding-s"}>
+            //     <UU5.Bricks.Modal offsetTop={100} shown={selectedBookData}>
+            //         <BookUpdateForm
+            //              // createItem={dataListResult.handlerMap.createItem}
+            //              // setSelectedBookData={setSelectedBookData}
+            //               selectedBookData={selectedBookData}
+            //         />
+            //     </UU5.Bricks.Modal>
+            //     <UU5.Bricks.Modal offsetTop={100} shown={addBookImageData}>
+            //         <BookImageForm
+            //             setAddBookImageData={setAddBookImageData}
+            //             addBookImageData={addBookImageData}
+            //         />
+            //     </UU5.Bricks.Modal>
+            //     <UU5.Bricks.Header content={<UU5.Bricks.Lsi lsi={{en: "Book List", cs: "Seznam knih"}}/>} level={3}/>
+            //     <div className={"right"}>
+            //         <UU5.Bricks.Button
+            //             content={<UU5.Bricks.Lsi lsi={{en: "Create Book", cs: "Vytvořit knihu"}}/>}
+            //             colorSchema={"green"}
+            //             onClick={() => setSelectedBookData({data: {}})}
+            //         />
+            //     </div>
+            //     {getChild()}
+            // </div>,
+            Object.entries(props)
         );
         //@@viewOff:render
     },
 });
 
-export default BookList;
+export default RecipeList;
