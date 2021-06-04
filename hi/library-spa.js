@@ -8,6 +8,9 @@ import Book from "book";
 import Author from "author";
 import BookList from "bookList";
 import AuthorList from "authorList";
+
+import Ingredient from "ingredient";
+import IngredientList from "ingredientList";
 //@@viewOff:imports
 
 const STATICS = {
@@ -54,14 +57,20 @@ export const LibrarySpa = createVisualComponent({
             UU5.Environment.getRouter().setRoute("authorList")
         }
 
-        function goToIngredList() {
-            UU5.Environment.getRouter().setRoute("ingredList")
+        function goToIngredientList() {
+            UU5.Environment.getRouter().setRoute("ingredientList")
         }
 
         function goToRecipeList() {
             UU5.Environment.getRouter().setRoute("authorList")
         }
 
+
+
+
+
+
+        
         //@@viewOff:private
 
         //@@viewOn:interface
@@ -117,6 +126,15 @@ export const LibrarySpa = createVisualComponent({
                             <div>
                                 <UU5.Bricks.Button
                                     bgStyle={"transparent"}
+                                    onClick={goToIngredientList}
+                                >
+                                    <UU5.Bricks.Icon icon="mdi-library"/>
+                                    <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Autoři"}}/>
+                                </UU5.Bricks.Button>
+                            </div>
+                            <div>
+                                <UU5.Bricks.Button
+                                    bgStyle={"transparent"}
                                     onClick={goToIngredList}
                                 >
                                     <UU5.Bricks.Icon icon="mdi-library"/>
@@ -139,6 +157,8 @@ export const LibrarySpa = createVisualComponent({
                         "authorList": {component: <AuthorList/>},
                         "book": {component: <Book/>},
                         "author": {component: <Author/>},
+                        "ingredientList": {component: <IngredientList/>},
+                        "ingredient": {component: <Ingredient/>},
                     }}/>
             </UU5.Bricks.Page>
         );

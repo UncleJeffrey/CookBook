@@ -5,7 +5,7 @@ const path = require('path');
 
 const bookRouter = require("./controller/book-controller");
 const recipeRouter = require("./controller/book-controller");
-const authorRouter = require("./controller/author-controller");
+const ingredientRouter = require("./controller/ingredient-controller");
 const bookImageRouter = require("./controller/book-image-controller");
 
 const app = express();
@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/book/", bookRouter);
-app.use("/author/", authorRouter);
+app.use("/ingredient/", ingredientRouter);
 app.use("/bookImage/", bookImageRouter);
 
 app.use("/library-spa.js", function(req,res) {
@@ -23,14 +23,14 @@ app.use("/library-spa.js", function(req,res) {
 app.use("/book.js", function(req,res) {
     res.sendFile(path.join(__dirname+'/hi/book.js'));
 })
-app.use("/author.js", function(req,res) {
-    res.sendFile(path.join(__dirname+'/hi/author.js'));
+app.use("/ingredient.js", function(req,res) {
+    res.sendFile(path.join(__dirname+'/hi/ingredient.js'));
 })
-app.use("/author-list.js", function(req,res) {
-    res.sendFile(path.join(__dirname+'/hi/author-list.js'));
+app.use("/ingredient-list.js", function(req,res) {
+    res.sendFile(path.join(__dirname+'/hi/ingredient-list.js'));
 })
-app.use("/author-update-form.js", function(req,res) {
-    res.sendFile(path.join(__dirname+'/hi/author-update-form.js'));
+app.use("/ingredient-update-form.js", function(req,res) {
+    res.sendFile(path.join(__dirname+'/hi/ingredient-update-form.js'));
 })
 app.use("/book-list.js", function(req,res) {
     res.sendFile(path.join(__dirname+'/hi/book-list.js'));
