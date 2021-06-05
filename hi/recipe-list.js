@@ -38,7 +38,7 @@ export const RecipeList = createVisualComponent({
             itemHandlerMap: {
                 update: Calls.updateRecipe,
                 delete: Calls.deleteRecipe,
-                approve: Calls.approveIngredient
+                approve: Calls.approveRecipe
             },
             initialDtoIn: {data: {}}
         });

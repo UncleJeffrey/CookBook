@@ -14,7 +14,8 @@
     "description": "aa",
     "ingredientList": [
       "1678924"
-    ]
+    ],
+    "approved": true
   },
   "1234": {
     "id": "1234",
@@ -23,26 +24,25 @@
     "ingredientList": [
       "178870"
     ],
-    "approved": false
+    "approved": true
   },
   "4724": {
     "id": "4724",
-    "approved": true,
     "name": "Voda z Karlovy Studánkym ě",
-    "description": "Vyloženěx k zamyšlení.q",
+    "description": "Vyloženěx k zamšyšlení.q",
     "ingredientList": [
       "161240"
-    ]
+    ],
+    "approved": true
   },
   "4780": {
     "id": "4780",
-    "approved": true,
     "name": "Letní salát",
     "description": "Magii tohoto pokrmu prostě nepřekonáěěte.",
     "ingredientList": [
-      "151552",
       "1678924"
-    ]
+    ],
+    "approved": true
   },
   "4789": {
     "id": "4789",
@@ -52,7 +52,8 @@
       "89754",
       "178870",
       "1678924"
-    ]
+    ],
+    "approved": true
   },
   "6781": {
     "id": "6781",
@@ -96,6 +97,15 @@
       "148374"
     ]
   },
+  "34234": {
+    "id": "34234",
+    "name": "ahoj",
+    "description": "yes",
+    "ingredientList": [
+      "178870"
+    ],
+    "approved": true
+  },
   "22334323": {
     "id": "22334323",
     "name": "asds",
@@ -106,11 +116,9 @@
   },
   "0233": {
     "id": "0233",
-    "approved": true,
-    "name": "Kuku",
+    "name": "Kukuš",
     "description": "Nejlepší dušená kukačka co jste kdy měli.",
     "ingredientList": [
-      "13786",
       "178870"
     ]
   }
