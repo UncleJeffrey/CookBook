@@ -60,7 +60,7 @@ export const RecipeList = createVisualComponent({
                 cell: cellProps => {
                     return (
                         <UU5.Bricks.Image
-                            alt={""}
+                            // alt={"https://cdn.iconscout.com/icon/free/png-256/japanese-food-819250.png"}
                             src={"http://localhost:3000/recipeImage/get?code=" + cellProps.data.data.id}
                             type={"rounded"}
                             style={{maxHeight: "60px"}}
@@ -68,7 +68,7 @@ export const RecipeList = createVisualComponent({
                     )
                 },
                 header: <UU5.Bricks.Lsi lsi={{en: "Cover", cs: "Obal"}}/>,
-                width: "60px"
+                width: "100px"
             },
             {
                 cell: cellProps => {
@@ -99,7 +99,7 @@ export const RecipeList = createVisualComponent({
                     return (
                         <div className={"right"}>
                             <UU5.Bricks.Button
-                                content={<UU5.Bricks.Icon icon={"mdi-recipe-open"}/>}
+                                content={<UU5.Bricks.Icon icon={"mdi-book-open"}/>}
                                 onClick={() => showRecipe(cellProps.data.data.id)}
                                 bgStyle={"transparent"}
                             />
