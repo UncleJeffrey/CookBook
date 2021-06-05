@@ -98,12 +98,6 @@ export const RecipeList = createVisualComponent({
                 cell: cellProps => {
                     return (
                         <div className={"right"}>
-                            // TODO optimize
-                            // <UU5.Bricks.Button
-                            //     content={<UU5.Bricks.Icon icon={"mdi-book-open"}/>}
-                            //     onClick={() => showRecipe(cellProps.data.data.id)}
-                            //     bgStyle={"transparent"}
-                            // />
                             <UU5.Bricks.Button
                                 content={<UU5.Bricks.Icon icon={"mdi-pencil"}/>}
                                 colorSchema={"blue"}
