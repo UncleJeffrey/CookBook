@@ -2,20 +2,26 @@
   "978-80-259-0233-2": {
     "id": "978-80-259-0233-2",
     "name": "Volání Kukačkyssss",
+    "description": "Nejlepší dušená kukačka co jste kdy měli.",
     "ingredientList": [
+      "13786",
       "178870"
     ]
   },
   "978-80-7473-866-1": {
     "id": "978-80-7473-866-1",
     "name": "Smrtící bílá",
+    "description": "Po téhle lahůdce se nebudete chtít probudit.",
     "ingredientList": [
+      "148374",
+      "151552",
       "178870"
     ]
   },
   "978-80-00-04724-9": {
     "id": "978-80-00-04724-9",
     "name": "Harry Potter a Kámen mudrců",
+    "description": "Vyloženě k zamyšlení.",
     "ingredientList": [
       "161240"
     ]
@@ -23,13 +29,16 @@
   "978-80-00-04789-8": {
     "id": "978-80-00-04789-8",
     "name": "Harry Potter a vězeň z Azkabanu",
+    "description": "Vězeňská strava nemusí být vždy k zahození.",
     "ingredientList": [
-      "161240"
+      "178870",
+      "1678924"
     ]
   },
   "978-80-7662-068-1": {
     "id": "978-80-7662-068-1",
     "name": "Království",
+    "description": "Poobědvat jako králů pán",
     "ingredientList": [
       "148374"
     ]
@@ -37,16 +46,20 @@
   "978-80-00-04780-5": {
     "id": "978-80-00-04780-5",
     "name": "Harry Potter a Tajemná komnata",
+    "description": "Magii tohoto pokrmu prostě nepřekonáte.",
     "ingredientList": [
-      "161240"
+      "151552",
+      "1678924"
     ]
   },
   "978-80-7390-251-3": {
     "id": "978-80-7390-251-3",
     "name": "Cesta do středu Země",
+    "description": "Katův šleh stokrát jinak.",
     "ingredientList": [
       "151552",
-      "161240"
+      "161240",
+      "178870"
     ]
   }
 }

@@ -74,12 +74,17 @@ export const RecipeList = createVisualComponent({
                 cell: cellProps => {
                     return cellProps.data.data.id
                 },
-                header: "ISBN",
-                width: "200px"
+                header: "id",
+                width: "10%"
             },
             {
                 cell: cellProps => cellProps.data.data.name,
                 header: <UU5.Bricks.Lsi lsi={{en: "Name", cs: "Název"}}/>
+            },
+            {
+                cell: cellProps => cellProps.data.data.description ? cellProps.data.data.description : "undefined",
+                header: <UU5.Bricks.Lsi lsi={{en: "Description", cs: "Postup"}}/>,
+                width: "30%"
             },
             {
                 cell: cellProps => {

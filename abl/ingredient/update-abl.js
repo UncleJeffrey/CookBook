@@ -7,8 +7,9 @@ async function UpdateAbl(req, res) {
     if (
         (id && typeof id === "string" && id.length < 25) &&
         (name && typeof name === "string" && name.length < 30)
+        && (unit && typeof unit === "string" && unit.length < 32)
     ) {
-        const ingredient = {id, name};
+        const ingredient = {id, name, unit};
         try {
             let result = await dao.updateIngredient(ingredient);
             res.status(200).json(result);

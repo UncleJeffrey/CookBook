@@ -7,7 +7,7 @@ async function CreateAbl(req, res) {
     if (
         name && typeof name === "string" && name.length < 64 &&
         id && typeof id === "string" && id.length < 64 
-        // && unit && typeof unit === "string" && unit.length < 32
+        && unit && typeof unit === "string" && unit.length < 32
     ) {
         const ingredient = {id, name, unit, approved: false};
         try {

@@ -3,13 +3,14 @@ const LibraryDao = require("../../dao/recipe-dao");
 let dao = new LibraryDao(path.join(__dirname, "..", "..", "storage", "recipes.json"))
 
 async function UpdateAbl(req, res) {
-    let {id, name, ingredientList} = req.body;
+    let {id, name, description, ingredientList} = req.body;
     if (
         (id && typeof id === "string" && id.length < 25) &&
         (name && typeof name === "string" && name.length < 200) &&
-        (ingredientList && ingredientList.length > 0 && ingredientList.length < 10)
+        (ingredientList && ingredientList.length > 0 && ingredientList.length < 10) &&
+        (description && typeof description === "string" && description.length < 200)
     ) {
-        const recipe = {id, name, ingredientList};
+        const recipe = {id, name, description, ingredientList};
         try {
             let result = await dao.updateRecipe(recipe);
             res.status(200).json(result);

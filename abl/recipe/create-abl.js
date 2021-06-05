@@ -5,11 +5,12 @@ const IngredientsDao = require("../../dao/ingredients-dao");
 let ingredientsDao = new IngredientsDao(path.join(__dirname, "..", "..", "storage", "ingredients.json"))
 
 async function CreateAbl(req, res) {
-    let {id, name, ingredientList} = req.body;
+    let {id, name, description, ingredientList} = req.body;
     if (
         name && typeof name === "string" && name.length < 200 &&
         ingredientList && ingredientList.length > 0 && ingredientList.length < 10 &&
-        id && typeof id === "string" && id.length < 25
+        id && typeof id === "string" && id.length < 25 &&
+        description && typeof description === "string" && description.length
     ) {
         for (let i = 0; i< ingredientList.length; i++) {
             try {
@@ -22,7 +23,7 @@ async function CreateAbl(req, res) {
                 }
             }
         }
-        const recipe = {id, name, ingredientList};
+        const recipe = {id, name, description, ingredientList};
         try {
             let result = await dao.addRecipe(recipe);
             res.status(200).json(result);
