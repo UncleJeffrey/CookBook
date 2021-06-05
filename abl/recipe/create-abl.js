@@ -23,7 +23,7 @@ async function CreateAbl(req, res) {
                 }
             }
         }
-        const recipe = {id, name, description, ingredientList};
+        const recipe = {id, name, description, ingredientList, approved: false};
         try {
             let result = await dao.addRecipe(recipe);
             res.status(200).json(result);

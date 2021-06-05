@@ -106,6 +106,26 @@ class RecipeDao {
         return recipes;
     }
 
+    // approve
+    async approveRecipe(recipe) {
+        const recipes = await this._loadAllRecipes();
+        if (recipes[recipe.id]) {
+            recipes[recipe.id].approved = true;
+            try {
+                await wf(this._getStorageLocation(), JSON.stringify(recipes, null, 2));
+                return recipes[recipe.id];
+            } catch (error) {
+                const e = new Error(`Failed to approve ingredient with id '${recipe.id}' in local storage.`);
+                e.code = "FAILED_TO_APPROVE_RECIPE";
+                throw e;
+            }
+        } else {
+            const e = new Error(`Ingredient with id '${recipe.id}' does not exist.`);
+            e.code = "FAILED_TO_GET_RECIPE";
+            throw e;
+        }
+    }
+
     _isDuplicate(recipes, id) {
         return !!recipes[id];
     }

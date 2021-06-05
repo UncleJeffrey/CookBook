@@ -41,6 +41,11 @@ let Calls = {
         return call("post", commandUri, dtoIn.data, { contentType: "multipart/form-data"});
     },
 
+    approveRecipe(dtoIn) {
+        let commandUri = Calls.getCommandUri("recipe/approve");
+        return call("post", commandUri, dtoIn.data);
+    },
+
 
     createIngredient(dtoIn) {
         let commandUri = Calls.getCommandUri("ingredient/create");

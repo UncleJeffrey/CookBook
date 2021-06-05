@@ -37,7 +37,8 @@ export const RecipeList = createVisualComponent({
             },
             itemHandlerMap: {
                 update: Calls.updateRecipe,
-                delete: Calls.deleteRecipe
+                delete: Calls.deleteRecipe,
+                approve: Calls.approveIngredient
             },
             initialDtoIn: {data: {}}
         });
@@ -54,7 +55,7 @@ export const RecipeList = createVisualComponent({
 
         const [selectedRecipeData, setSelectedRecipeData] = useState(null)
         const [addRecipeImageData, setAddRecipeImageData] = useState(null)
-
+        const [showAcceptedOnly, setShowAcceptedOnly] = useState(true)  
         const columns = [
             {
                 cell: cellProps => {
@@ -96,36 +97,58 @@ export const RecipeList = createVisualComponent({
             },
             {
                 cell: cellProps => {
-                    return (
-                        <div className={"right"}>
-                            <UU5.Bricks.Button
-                                content={<UU5.Bricks.Icon icon={"mdi-pencil"}/>}
-                                colorSchema={"blue"}
-                                bgStyle={"transparent"}
-                                onClick={() => setSelectedRecipeData(cellProps.data)}
-                            />
-                            <UU5.Bricks.Button
-                                content={<UU5.Bricks.Icon icon={"mdi-file-image"}/>}
-                                colorSchema={"blue"}
-                                bgStyle={"transparent"}
-                                onClick={() => setAddRecipeImageData(cellProps.data)}
-                                tooltip={{en: "add cover", cs: "přidat obal"}}
-                            />
-                            <UU5.Bricks.Button
-                                content={<UU5.Bricks.Icon icon={"mdi-delete"}/>}
-                                colorSchema={"red"}
-                                bgStyle={"transparent"}
-                                onClick={() => cellProps.data.handlerMap.delete({data: {id: cellProps.data.data.id}})}
-                            />
-                        </div>
-                    )
+                    if (cellProps.data.data.approved) {
+                        return (
+                            <div className={"right"}>
+                                <UU5.Bricks.Button
+                                    content={<UU5.Bricks.Icon icon={"mdi-pencil"}/>}
+                                    colorSchema={"blue"}
+                                    bgStyle={"transparent"}
+                                    onClick={() => setSelectedRecipeData(cellProps.data)}
+                                />
+                                <UU5.Bricks.Button
+                                    content={<UU5.Bricks.Icon icon={"mdi-file-image"}/>}
+                                    colorSchema={"blue"}
+                                    bgStyle={"transparent"}
+                                    onClick={() => setAddRecipeImageData(cellProps.data)}
+                                    tooltip={{en: "add cover", cs: "přidat obal"}}
+                                />
+                                <UU5.Bricks.Button
+                                    content={<UU5.Bricks.Icon icon={"mdi-delete"}/>}
+                                    colorSchema={"red"}
+                                    bgStyle={"transparent"}
+                                    onClick={() => cellProps.data.handlerMap.delete({data: {id: cellProps.data.data.id}})}
+                                />
+                            </div>
+                        )
+                    }
+                    else {
+                        return (
+                            <div className={"center"}>
+                                <UU5.Bricks.Button
+                                    content={<UU5.Bricks.Icon icon={"mdi-check"}/>}
+                                    colorSchema={"green"}
+                                    bgStyle={"transparent"}
+                                    onClick={() => cellProps.data.handlerMap.approve({data: {id: cellProps.data.data.id}})}
+                                />
+                                <UU5.Bricks.Button
+                                    content={<UU5.Bricks.Icon icon={"mdi-delete"}/>}
+                                    colorSchema={"red"}
+                                    bgStyle={"transparent"}
+                                    onClick={() => cellProps.data.handlerMap.delete({data: {id: cellProps.data.data.id}})}
+                                />
+                            </div>
+                        )
+                    }
                 },
                 width: 150
             },
+
         ];
 
         function getChild() {
             let child;
+            let dataList;
             switch (dataListResult.state) {
                 case "pendingNoData":
                 case "pending":
@@ -133,10 +156,17 @@ export const RecipeList = createVisualComponent({
                     break;
                 case "readyNoData":
                 case "ready":
+                     if (showAcceptedOnly) {
+                        dataList = dataListResult.data.filter(item => {
+                            return item.data.approved
+                        })
+                    } else {
+                        dataList = dataListResult.data
+                    }
                     child = (
                         <Uu5Tiles.List
                             height="auto"
-                            data={dataListResult.data}
+                            data={dataList}
                             columns={columns}
                             rowHeight={"76px"}
                             rowAlignment={"center"}
@@ -183,6 +213,14 @@ export const RecipeList = createVisualComponent({
                         content={<UU5.Bricks.Lsi lsi={{en: "Create Recipe", cs: "Vytvořit knihu"}}/>}
                         colorSchema={"green"}
                         onClick={() => setSelectedRecipeData({data: {}})}
+                    />
+                    <UU5.Bricks.Button
+                    content={showAcceptedOnly
+                        ? <UU5.Bricks.Lsi lsi={{en: "Show All", cs: "Zobrazit všechny"}}/>
+                        : <UU5.Bricks.Lsi lsi={{en: "Show Accepted Only", cs: "Zobrazit pouze akceptované"}}/>
+                    }
+                    colorSchema={showAcceptedOnly ? "blue" : "pink"}
+                    onClick={() => setShowAcceptedOnly(currentState => !currentState)}
                     />
                 </div>
                 {getChild()}
