@@ -71,7 +71,6 @@ export const LibrarySpa = createVisualComponent({
                         <UU5.Bricks.Lsi lsi={{en: "uuCookBook - Team 6", cs: "uuCookBook - Tým 6"}}/>
                     </UU5.Bricks.Box>
                 }
-                bottom={<UU5.Bricks.Box colorSchema="pink" className="center">Open Source</UU5.Bricks.Box>}
                 left={
                     <UU5.Bricks.Div>
                         <UU5.Bricks.Image src="https://i.imgur.com/MVkHqpM.jpg" type="rounded" />
@@ -84,7 +83,7 @@ export const LibrarySpa = createVisualComponent({
                                     onClick={goToRecipeList}
                                 >
                                     <UU5.Bricks.Icon icon="mdi-library-books"/>
-                                    <UU5.Bricks.Lsi lsi={{en: "Books", cs: "Knihy"}}/>
+                                    <UU5.Bricks.Lsi lsi={{en: "Recipes", cs: "Recepty"}}/>
                                 </UU5.Bricks.Button>
 
                             </div>

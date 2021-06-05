@@ -79,6 +79,13 @@ export const IngredientUpdateForm = createVisualComponent({
                         required
                         value={selectedIngredientData && selectedIngredientData.name}
                     />
+                    <UU5.Forms.Text
+                        name="unit"
+                        label={<UU5.Bricks.Lsi lsi={{en: "Unit", cs: "Jednotka"}}/>}
+                        placeholder="Some unit..."
+                        required
+                        value={selectedIngredientData && selectedIngredientData.unit}
+                    />
                     <UU5.Bricks.Line size={"s"}/>
                     <UU5.Forms.Controls/>
                 </UU5.Forms.Form>
