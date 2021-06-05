@@ -8,7 +8,7 @@ const wf = fs.promises.writeFile;
 // 1
 const DEFAULT_STORAGE_PATH = path.join(__dirname, "storage", "ingredients.json");
 
-class LibraryDao {
+class CookBookDao {
     constructor(storagePath) {
         this.ingredientStoragePath = storagePath ? storagePath : DEFAULT_STORAGE_PATH;
     }
@@ -136,4 +136,4 @@ class LibraryDao {
 
 }
 
-module.exports = LibraryDao;
+module.exports = CookBookDao;

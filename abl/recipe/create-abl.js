@@ -1,6 +1,6 @@
 const path = require("path");
-const LibraryDao = require("../../dao/recipe-dao");
-let dao = new LibraryDao(path.join(__dirname, "..", "..", "storage", "recipes.json"))
+const CookBookDao = require("../../dao/recipe-dao");
+let dao = new CookBookDao(path.join(__dirname, "..", "..", "storage", "recipes.json"))
 const IngredientsDao = require("../../dao/ingredients-dao");
 let ingredientsDao = new IngredientsDao(path.join(__dirname, "..", "..", "storage", "ingredients.json"))
 

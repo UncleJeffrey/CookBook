@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const Ajv = require("ajv").default;
-const LibraryDao = require("../../dao/recipe-dao");
-let dao = new LibraryDao(path.join(__dirname, "..", "..", "storage", "recipes.json"))
+const CookBookDao = require("../../dao/recipe-dao");
+let dao = new CookBookDao(path.join(__dirname, "..", "..", "storage", "recipes.json"))
 const { createRecipeImageSchema } = require("../../schemas/recipe-image-schemas");
 
 async function CreateAbl(busboy, res) {

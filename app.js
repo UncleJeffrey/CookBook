@@ -16,8 +16,8 @@ app.use("/recipe/", recipeRouter);
 app.use("/ingredient/", ingredientRouter);
 app.use("/recipeImage/", recipeImageRouter);
 
-app.use("/library-spa.js", function(req,res) {
-    res.sendFile(path.join(__dirname+'/hi/library-spa.js'));
+app.use("/cookbook-spa.js", function(req,res) {
+    res.sendFile(path.join(__dirname+'/hi/cookbook-spa.js'));
 })
 app.use("/recipe.js", function(req,res) {
     res.sendFile(path.join(__dirname+'/hi/recipe.js'));

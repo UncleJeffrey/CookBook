@@ -1,6 +1,6 @@
 const path = require("path");
-const LibraryDao = require("../../dao/recipe-dao");
-let dao = new LibraryDao(path.join(__dirname, "..", "..", "storage", "recipes.json"))
+const CookBookDao = require("../../dao/recipe-dao");
+let dao = new CookBookDao(path.join(__dirname, "..", "..", "storage", "recipes.json"))
 
 async function DeleteAbl(req, res) {
     let {id} = req.body;

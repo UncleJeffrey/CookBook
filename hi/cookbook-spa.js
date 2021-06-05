@@ -12,7 +12,7 @@ import IngredientList from "ingredientList";
 
 const STATICS = {
     //@@viewOn:statics
-    displayName: "LibrarySpa",
+    displayName: "CookBookSpa",
     //@@viewOff:statics
 };
 
@@ -35,7 +35,7 @@ const CLASS_NAMES = {
   `,
 };
 
-export const LibrarySpa = createVisualComponent({
+export const CookBookSpa = createVisualComponent({
     ...STATICS,
 
     //@@viewOn:propTypes
@@ -120,4 +120,4 @@ export const LibrarySpa = createVisualComponent({
 })
 ;
 
-export default LibrarySpa;
+export default CookBookSpa;

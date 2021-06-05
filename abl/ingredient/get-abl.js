@@ -1,6 +1,6 @@
 const path = require("path");
-const LibraryDao = require("../../dao/ingredients-dao");
-let dao = new LibraryDao(path.join(__dirname, "..", "..", "storage", "ingredients.json"))
+const CookBookDao = require("../../dao/ingredients-dao");
+let dao = new CookBookDao(path.join(__dirname, "..", "..", "storage", "ingredients.json"))
 
 async function GetAbl(req, res) {
     let {id} = req.body;
