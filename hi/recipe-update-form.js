@@ -99,7 +99,7 @@ export const RecipeUpdateForm = createVisualComponent({
                         required
                         value={selectedRecipeData && selectedRecipeData.name}
                     />
-                    <UU5.Forms.Text
+                    <UU5.Forms.TextArea
                         name="description"
                         label={<UU5.Bricks.Lsi lsi={{en: "Description", cs: "Popis"}}/>}
                         placeholder="Some text..."
