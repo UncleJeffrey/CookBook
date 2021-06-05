@@ -3,7 +3,7 @@ const CookBookDao = require("../../dao/ingredients-dao");
 let dao = new CookBookDao(path.join(__dirname, "..", "..", "storage", "ingredients.json"))
 
 async function UpdateAbl(req, res) {
-    let {id, name} = req.body;
+    let {id, name, unit} = req.body;
     if (
         (id && typeof id === "string" && id.length < 25) &&
         (name && typeof name === "string" && name.length < 30)

@@ -1,7 +1,13 @@
 {
   "13786": {
     "id": "13786",
-    "name": "Kukačka",
+    "name": "Kukačkal",
+    "unit": "p",
+    "approved": true
+  },
+  "89754": {
+    "id": "89754",
+    "name": "Sekerka",
     "unit": "p",
     "approved": true
   },
