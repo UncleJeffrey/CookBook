@@ -74,7 +74,7 @@ let Calls = {
 
     listIngredients(dtoIn) {
         let commandUri = Calls.getCommandUri("ingredient/list");
-        return call("get", commandUri, dtoIn.data);
+        return call("get", commandUri, dtoIn ? dtoIn.data : null);
     },
 
     /*

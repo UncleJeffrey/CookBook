@@ -5,7 +5,7 @@ const IngredientsDao = require("../../dao/ingredients-dao");
 let ingredientsDao = new IngredientsDao(path.join(__dirname, "..", "..", "storage", "ingredients.json"))
 
 async function CreateAbl(req, res) {
-    let {id, name, description, ingredientList} = req.body;
+    let {id, name, description, ingredientList, ingredientMap ? ingredientMap : null} = req.body;
     if (
         name && typeof name === "string" && name.length < 200 &&
         ingredientList && ingredientList.length > 0 && ingredientList.length < 10 &&

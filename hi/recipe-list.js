@@ -61,7 +61,7 @@ export const RecipeList = createVisualComponent({
                 cell: cellProps => {
                     return (
                         <UU5.Bricks.Image
-                            // alt={"https://cdn.iconscout.com/icon/free/png-256/japanese-food-819250.png"}
+                            alt={""}
                             src={"http://localhost:3000/recipeImage/get?code=" + cellProps.data.data.id}
                             type={"rounded"}
                             style={{maxHeight: "60px"}}
@@ -91,6 +91,14 @@ export const RecipeList = createVisualComponent({
                 cell: cellProps => {
                     let result = [];
                     cellProps.data.data.ingredientList.forEach(ingredientId => result.push(ingredientMap[ingredientId] && ingredientMap[ingredientId].name))
+                    return result.join(", ")
+                },
+                header: <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Ingredience"}}/>
+            },
+            {
+                cell: cellProps => {
+                    let result = [];
+                    cellProps.data.data.ingredientMap ? (cellProps.data.data.ingredientMap.forEach(ingredientId => result.push(ingredientMap[ingredientId] && ingredientMap[ingredientId].name))) : result.push("undefined")
                     return result.join(", ")
                 },
                 header: <UU5.Bricks.Lsi lsi={{en: "Ingredients", cs: "Ingredience"}}/>
@@ -195,11 +203,11 @@ export const RecipeList = createVisualComponent({
         return (
             <div {...attrs} className={"uu5-common-padding-s"}>
                 <UU5.Bricks.Modal offsetTop={100} shown={selectedRecipeData}>
-                    <RecipeUpdateForm
+                    {selectedRecipeData && <RecipeUpdateForm
                         createItem={dataListResult.handlerMap.createItem}
                         setSelectedRecipeData={setSelectedRecipeData}
                         selectedRecipeData={selectedRecipeData}
-                    />
+                    />}
                 </UU5.Bricks.Modal>
                 <UU5.Bricks.Modal offsetTop={100} shown={addRecipeImageData}>
                     <RecipeImageForm
@@ -210,7 +218,7 @@ export const RecipeList = createVisualComponent({
                 <UU5.Bricks.Header content={<UU5.Bricks.Lsi lsi={{en: "Recipe List", cs: "Seznam receptů"}}/>} level={3}/>
                 <div className={"right"}>
                     <UU5.Bricks.Button
-                        content={<UU5.Bricks.Lsi lsi={{en: "Create Recipe", cs: "Vytvořit knihu"}}/>}
+                        content={<UU5.Bricks.Lsi lsi={{en: "Create Recipe", cs: "Vytvořit recept"}}/>}
                         colorSchema={"green"}
                         onClick={() => setSelectedRecipeData({data: {}})}
                     />
