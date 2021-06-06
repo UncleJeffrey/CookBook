@@ -1,35 +1,8 @@
 {
-  "23": {
-    "id": "23",
-    "approved": true,
-    "name": "sdasd",
-    "description": "sdwq",
-    "ingredientList": [
-      "178870"
-    ]
-  },
-  "123": {
-    "id": "123",
-    "name": "aa",
-    "description": "aa",
-    "ingredientList": [
-      "1678924"
-    ],
-    "approved": true
-  },
-  "1234": {
-    "id": "1234",
-    "name": "False pls",
-    "description": "please be false",
-    "ingredientList": [
-      "178870"
-    ],
-    "approved": true
-  },
   "4724": {
     "id": "4724",
-    "name": "Voda z Karlovy Studánkym ě",
-    "description": "Vyloženěx k zamšyšlení.q",
+    "name": "Voda z Karlovy Studánky",
+    "description": "Vyloženěx k zamšyšlení",
     "ingredientList": [
       "161240"
     ],
@@ -57,7 +30,7 @@
   },
   "6781": {
     "id": "6781",
-    "approved": false,
+    "approved": true,
     "name": "Salát Caesar",
     "description": "..kroky...",
     "ingredientList": [
@@ -97,29 +70,13 @@
       "148374"
     ]
   },
-  "34234": {
-    "id": "34234",
-    "name": "ahoj",
-    "description": "yes",
-    "ingredientList": [
-      "178870"
-    ],
-    "approved": true
-  },
-  "22334323": {
-    "id": "22334323",
-    "name": "asds",
-    "description": "asdwqs",
-    "ingredientList": [
-      "1678924"
-    ]
-  },
   "0233": {
     "id": "0233",
     "name": "Kukuš",
     "description": "Nejlepší dušená kukačka co jste kdy měli.",
     "ingredientList": [
       "178870"
-    ]
+    ],
+    "approved": true
   }
 }
