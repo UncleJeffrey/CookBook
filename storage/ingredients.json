@@ -1,0 +1,47 @@
+{
+  "13786": {
+    "id": "13786",
+    "name": "Kukačkalšš",
+    "unit": "pě"
+  },
+  "89754": {
+    "id": "89754",
+    "name": "Sekerkašě",
+    "unit": "p"
+  },
+  "148374": {
+    "id": "148374",
+    "name": "Strawberries",
+    "approved": true,
+    "unit": "p"
+  },
+  "149104": {
+    "id": "149104",
+    "name": "Potatoes",
+    "approved": true,
+    "unit": "kg"
+  },
+  "151552": {
+    "id": "151552",
+    "name": "Blueberriesl",
+    "unit": "dkg"
+  },
+  "161240": {
+    "id": "161240",
+    "name": "Water",
+    "approved": true,
+    "unit": "l"
+  },
+  "178870": {
+    "id": "178870",
+    "name": "Chicken Broth",
+    "approved": true,
+    "unit": "l"
+  },
+  "1678924": {
+    "id": "1678924",
+    "name": "Peas",
+    "unit": "Kg",
+    "approved": true
+  }
+}
